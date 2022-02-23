@@ -1,0 +1,174 @@
+/* Box sizing rules */
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	margin: 0;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* variables */
+:root {
+	--primary-color: #fff;
+	--secondary-color: rgb(180, 180, 180);
+	--accent: #f14f2b;
+	--gradient: linear-gradient(
+		142deg,
+		rgba(70, 71, 76, 1) 0%,
+		rgba(30, 31, 33, 1) 48%,
+		rgba(13, 13, 15, 1) 100%
+	);
+}
+
+body {
+	max-width: 100%;
+	min-height: 100vh;
+	display: grid;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	color: var(--primary-color);
+	background: rgb(70, 71, 76);
+	background: var(--gradient);
+}
+
+.text {
+	padding: 1rem;
+	margin-left: 1rem;
+}
+.title {
+	font-size: clamp(3rem, calc(5vw + 1rem), 8rem);
+	line-height: 1.1;
+}
+.subtitle {
+	color: var(--secondary-color);
+	font-size: clamp(1rem, calc(1vw), 4rem);
+	font-weight: normal;
+	max-width: 360px;
+}
+
+.location {
+	letter-spacing: 2px;
+	position: relative;
+	margin: 1rem 1rem 1rem 2rem;
+
+	padding: 1rem;
+	background: #b4b4b410;
+	border-radius: 1rem;
+}
+.location > * {
+	border-bottom: 1px solid #ffffff1f;
+
+	margin-bottom: 1rem;
+	padding: 10px;
+}
+.sec-title {
+	font-size: clamp(1rem, calc(1vw + 10px), 6rem);
+}
+.eg {
+	color: var(--secondary-color);
+	font-size: clamp(1rem, calc(1vw + 4px), 6rem);
+}
+button {
+	color: var(--primary-color);
+	background: var(--accent);
+	border-radius: 1rem;
+	padding: 1rem;
+	border: none;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+}
+button::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	background-color: #f74d27a4;
+	filter: blur(40px);
+	height: 10rem;
+	width: 10rem;
+	border-radius: 50%;
+	z-index: -1;
+}
+
+.house {
+	/* max-width: 70%; */
+	max-height: 80vh;
+	border-radius: 1rem;
+	object-fit: cover;
+}
+
+.section-two {
+	margin: 8rem auto 4rem auto;
+	max-width: 80%;
+	/* padding: 2rem; */
+}
+/* Layout */
+
+.wrapper {
+	min-width: 90%;
+	margin: 0 auto;
+	/* background-color: #f2785c; */
+	padding: 2rem;
+	display: grid;
+	align-items: center;
+	column-gap: 3rem;
+	grid-template-columns: 1fr 1fr;
+}
+
+.house {
+	grid-area: 1 / 2 / 3 / 3;
+	justify-self: center;
+}
+
+.section-two {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+}
+.portrait {
+	height: 100%;
+	grid-area: 1 / 1 / 4 / 2;
+}
+.landscape {
+	grid-area: 1 / 2 / 2 / 4;
+}
